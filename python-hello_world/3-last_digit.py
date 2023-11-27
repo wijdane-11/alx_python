@@ -12,3 +12,4 @@ elif number < 0:
     print("less than 6 and not 0")
 else:
     print("greater than 5")
+    

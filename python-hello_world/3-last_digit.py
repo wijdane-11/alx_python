@@ -6,12 +6,9 @@ last_digit = abs(number) % 10
 
 print("Last digit of {} is {} and is ".format(number, last_digit), end="")
 
-if number < 0:
-    last_digit *= -1  # Correct the sign for negative numbers
-
-if last_digit > 5:
-    print("greater than 5")
-elif last_digit == 0:
+if last_digit == 0 and number != 0:
     print("0")
+elif number < 0:
+    print("-{} and is less than 6 and not 0".format(last_digit))
 else:
-    print("less than 6 and not 0")
+    print("greater than 5")

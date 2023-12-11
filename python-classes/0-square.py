@@ -1,34 +1,10 @@
 class Square:
-    """
-    This is a Square class.
-
-    Attributes:
-        __size (int): The size of the square.
-    """
+    """Square class"""
 
     def __init__(self, size):
-        """
-        Initialize the Square instance with a given size.
+        """Initialize the Square instance with a given size.
 
         Args:
             size (int): The size of the square.
         """
         self.__size = size
-
-# Test the Square class
-if __name__ == "__main__":
-    Square = __import__('0-square').Square
-
-    my_square = Square(3)
-    print(type(my_square))
-    print(my_square.__dict__)
-
-    try:
-        print(my_square.size)
-    except AttributeError as e:
-        print(e)
-
-    try:
-        print(my_square.__size)
-    except AttributeError as e:
-        print(e)

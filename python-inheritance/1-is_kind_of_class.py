@@ -1,4 +1,12 @@
- a_class: The class to check against.
+#!/usr/bin/python3
+"""Defines a function that checks if an object is an instance of a class."""
+
+def is_kind_of_class(obj, a_class):
+    """Check if an object is an instance of, or if it inherited from, a class.
+
+    Args:
+        obj: The object to check.
+        a_class: The class to check against.
 
     Returns:
         True if the object is an instance of, or if the object is an instance
@@ -14,6 +22,3 @@ if __name__ == "__main__":
         print("{} comes from {}".format(a, float.__name__))
     if is_kind_of_class(a, object):
         print("{} comes from {}".format(a, object.__name__))
-
-
-

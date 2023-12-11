@@ -13,7 +13,7 @@ class Square:
         __size (int): The size of the square.
     """
 
-    def __init__(self, size):
+    def _init_(self, size):
         """
         Initializes a new Square instance.
 
@@ -22,11 +22,11 @@ class Square:
         """
         self.__size = size
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     # Example of using the Square class
     my_square = Square(3)
     print(type(my_square))
-    print(my_square.__dict__)
+    print(my_square._dict_)
 
     try:
         print(my_square.size)

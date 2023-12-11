@@ -1,5 +1,13 @@
 class Square:
+    """
+    This is a Square class.
+
+    Attributes:
+    __size (int): The size of the square.
+    """
+
     def __init__(self, size):
+        """Initialize the Square instance with a given size."""
         self.__size = size
 
 # Test the Square class
@@ -17,4 +25,5 @@ if __name__ == "__main__":
 
     try:
         print(my_square.__size)
-    except Attribut
+    except AttributeError as e:
+        print(e)

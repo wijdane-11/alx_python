@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Module 3-base_geometry"""
+"""
+Module 3-base_geometry
+"""
 
 class BaseGeometry:
-    """An empty class representing the base geometry."""
+    """
+    An empty class representing the base geometry.
+    """
     pass
 
 bg = BaseGeometry()
 print(bg)
-
 print(dir(bg))
-
 print(dir(BaseGeometry))
-

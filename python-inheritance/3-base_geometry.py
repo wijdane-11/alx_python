@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 3-base_geometry
+Module is documented
 """
 
 class BaseGeometry:

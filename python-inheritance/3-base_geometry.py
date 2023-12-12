@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module is documented
+This module defines an empty class BaseGeometry.
 """
 
 class BaseGeometry:

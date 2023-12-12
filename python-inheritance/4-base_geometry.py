@@ -21,7 +21,6 @@ if __name__ == "__main__":
     bg = BaseGeometry()
 
     try:
-        print(dir(bg)[:-1])
+        print(dir(bg)[:-1])  # Exclude the last element to match the expected output
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
-

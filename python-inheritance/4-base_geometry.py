@@ -21,6 +21,6 @@ if __name__ == "__main__":
     bg = BaseGeometry()
 
     try:
-        print(bg.area())
+        print(dir(bg))
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))

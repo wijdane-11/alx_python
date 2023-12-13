@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""3-square module"""
+"""Defines a Square class"""
+
 
 class Square:
-    """Square class"""
+    """Represents a square"""
 
     def __init__(self, size=0):
-        """Initialize the Square instance"""
+        """Initializes the square"""
         self.size = size
 
     @property
@@ -15,16 +16,17 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Set the size of the square with type and value validation"""
-        if not isinstance(value, int):
+        """Set the size of the square"""
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = alue
+        self.__size = value
 
     def area(self):
-        """Compute the area of the square"""
-        return self.__size * self.__size
+        """Calculates the area of the square"""
+        return self.__size ** 2
+
 
 if __name__ == "__main__":
     my_square = Square(89)

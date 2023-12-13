@@ -1,3 +1,9 @@
+"""
+Module 7-rectangle
+
+This module contains classes for geometric operations involving rectangles.
+"""
+
 class BaseGeometry:
     """
     A class defining geometric operations.

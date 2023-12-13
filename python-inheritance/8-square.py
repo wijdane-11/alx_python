@@ -37,6 +37,5 @@ if __name__ == "__main__":
     s = Square(13)
     print(s)
     print(s.area())
-
-print(dir(Square))
-print(issubclass(Square, Rectangle))
+    print(dir(Square))
+    print(issubclass(Square, Rectangle))

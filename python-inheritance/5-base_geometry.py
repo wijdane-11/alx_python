@@ -30,9 +30,3 @@ class BaseGeometry:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
-
-# Creating an instance of BaseGeometry
-bg = BaseGeometry()
-
-# Outputting the dir() of bg
-print(dir(bg))

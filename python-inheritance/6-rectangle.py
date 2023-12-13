@@ -19,3 +19,5 @@ class Rectangle(BaseGeometry):
 
 if __name__ == "__main__":
     r = Rectangle(3, 5)
+    print(r)
+    print(dir(Rectangle))

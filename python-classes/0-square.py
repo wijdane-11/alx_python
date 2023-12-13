@@ -58,7 +58,6 @@ if __name__ == "__main__":
         print(my_square_3.__dict__)
     except Exception as e:
         print(e)
-
     try:
         my_square_4 = Square(-89)
         print(type(my_square_4))

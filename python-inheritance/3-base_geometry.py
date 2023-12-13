@@ -16,4 +16,4 @@ BaseGeometry = Meta('BaseGeometry', (), {})
 
 bg = BaseGeometry()
 
-print(bg)
+print(dir(bg))

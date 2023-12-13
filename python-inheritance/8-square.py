@@ -11,12 +11,11 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
-        self.__width = 0
-        self.__height = 0
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+        super().__init__()
         self.__width = width
         self.__height = height
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
 
     def area(self):
         return self.__width * self.__height
@@ -27,13 +26,11 @@ class Rectangle(BaseGeometry):
 
 class Square(Rectangle):
     def __init__(self, size):
-        self.__size = 0
-        self.integer_validator("size", size)
-        self.__size = size
         super().__init__(size, size)
+        self.__size = size
 
     def __str__(self):
-        return f"[Rectangle] {self.__size}/{self.__size}"
+        return f"[Square] {self.__size}/{self.__size}"
 
 
 if __name__ == "__main__":

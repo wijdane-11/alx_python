@@ -1,9 +1,13 @@
-"""This module contains a class for basic geometric operations."""
-
 class BaseGeometry:
     """A class for basic geometric operations.
 
-    This class provides methods for geometric calculations and validation.
+    Attributes:
+        name (str): The name of the value.
+        value (int): The value to validate.
+
+    Methods:
+        area(): Raises an exception since the area calculation is not implemented.
+        integer_validator(name, value): Validates if the value is an integer and greater than 0.
     """
 
     def area(self):

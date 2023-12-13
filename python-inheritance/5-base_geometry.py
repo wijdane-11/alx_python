@@ -34,4 +34,4 @@ class BaseGeometry:
 bg = BaseGeometry()
 
 # Outputting the dir() of bg
-print(dir(bg))
+print(sorted(dir(bg)))

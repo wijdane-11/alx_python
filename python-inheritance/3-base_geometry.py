@@ -9,3 +9,13 @@ class Meta(type):
 
     def dummy_method(self):
         pass
+
+    __doc__ = "This is the BaseGeometry module."
+
+BaseGeometry = Meta('BaseGeometry', (), {})
+
+bg = BaseGeometry()
+
+print(bg)
+print(dir(bg))
+print(dir(BaseGeometry))

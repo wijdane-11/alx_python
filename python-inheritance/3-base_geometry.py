@@ -1,5 +1,4 @@
-class BaseGeometry:
-    pass
+BaseGeometry = type('BaseGeometry', (), {'dummy_method': lambda self: None})
 
 bg = BaseGeometry()
 

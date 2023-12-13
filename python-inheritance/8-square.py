@@ -1,5 +1,10 @@
+"""This module contains a class for basic geometric operations."""
+
 class BaseGeometry:
-    """A class for basic geometric operations."""
+    """A class for basic geometric operations.
+
+    This class provides methods for geometric calculations and validation.
+    """
 
     def area(self):
         """Raise an exception since the area calculation is not implemented."""

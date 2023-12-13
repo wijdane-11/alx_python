@@ -1,8 +1,6 @@
 class BaseGeometry:
-    """A class for basic geometric operations.
-
-    This class contains methods for basic geometric operations such as calculating area
-    and validating integer values.
+    """
+    A class for basic geometric operations.
 
     Methods:
         area(self): Raises an Exception indicating 'area() is not implemented'.
@@ -11,11 +9,12 @@ class BaseGeometry:
     """
 
     def area(self):
-        """Raise an Exception for unimplemented area calculation."""
+        """Raises an Exception for unimplemented area calculation."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validate the given value as an integer.
+        """
+        Validates the given value as an integer.
 
         Args:
             name (str): The name of the value being validated.
@@ -30,3 +29,9 @@ class BaseGeometry:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
+# Creating an instance of BaseGeometry
+bg = BaseGeometry()
+
+# Outputting the dir() of bg
+print(dir(bg))

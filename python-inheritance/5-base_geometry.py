@@ -33,6 +33,6 @@ class BaseGeometry:
 
 # Creating an instance of BaseGeometry
 bg = BaseGeometry()
-out
+
 # Outputting the dir() of bg
 print(dir(bg))

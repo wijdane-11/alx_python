@@ -1,3 +1,12 @@
+"""Module containing the BaseGeometry class.
+
+This module provides the BaseGeometry class, which includes methods for basic geometry operations.
+
+Classes:
+    BaseGeometry: A class representing basic geometric operations.
+
+"""
+
 class BaseGeometry:
     """A class for basic geometric operations.
 

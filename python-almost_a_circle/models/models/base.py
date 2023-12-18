@@ -1,22 +1,25 @@
-#!/usr/bin/python3
-"""Module defining the Base class."""
-
 class Base:
-    """The Base class for managing id attribute."""
+    __nb_objects = 0  # private class attribute
 
-    # Private class attribute
-    __nb_objects = 0
-
-    # Class constructor
     def __init__(self, id=None):
-        """Initialize the Base instance.
-
-        Args:
-            id (int): If provided, assign it to the public instance attribute id.
-                      Otherwise, increment __nb_objects and assign the new value to id.
-        """
         if id is not None:
-            self.id = id
+            self.id = id  # assign id if provided
         else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            type(self).__nb_objects += 1  # increment __nb_objects for each new instance
+            self.id = type(self).__nb_objects  # assign incremented value as id
+
+if __name__ == "__main__":
+    b1 = Base()
+    print(b1.id)  # Output: 1
+
+    b2 = Base()
+    print(b2.id)  # Output: 2
+
+    b3 = Base()
+    print(b3.id)  # Output: 3
+
+    b4 = Base(12)
+    print(b4.id)  # Output: 12
+
+    b5 = Base()
+    print(b5.id)  # Output: 4

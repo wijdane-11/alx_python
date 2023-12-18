@@ -2,13 +2,13 @@
 """Module defining the Base class."""
 
 class Base:
-    """The Base class for managing the id attribute."""
+    """The Base class for managing id attribute."""
 
     # Private class attribute
     __nb_objects = 0
 
     # Class constructor
-    def __init__(self, id=None):
+    def _init_(self, id=None):
         """Initialize the Base instance.
 
         Args:

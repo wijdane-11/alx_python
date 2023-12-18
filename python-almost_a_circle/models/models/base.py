@@ -1,5 +1,8 @@
+#!/usr/bin/python3
+"""Module defining the Base class."""
+
 class Base:
-    """The Base class for managing the id attribute."""
+    """The Base class for managing id attribute."""
 
     # Private class attribute
     __nb_objects = 0
@@ -17,4 +20,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-

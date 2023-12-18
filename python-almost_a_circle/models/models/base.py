@@ -8,7 +8,7 @@ class Base:
     __nb_objects = 0
 
     # Class constructor
-    def _init_(self, id=None):
+    def __init__(self, id=None):
         """Initialize the Base instance.
 
         Args:

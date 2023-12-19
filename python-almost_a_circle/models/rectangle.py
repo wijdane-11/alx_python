@@ -83,9 +83,11 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Displays the rectangle using the character '#'."""
-        for _ in range(self.height):
-            print("#" * self.width)
+        """Displays the rectangle using the character '#' considering x and y coordinates."""
+        for i in range(self.y):
+            print()
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """Overrides the __str__ method to provide a custom string representation."""

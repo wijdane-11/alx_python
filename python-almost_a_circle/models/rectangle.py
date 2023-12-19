@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """ models/rectangle.py """
 
-from models.base import Base
+class Base:
+    def __init__(self, id):
+        self.id = id
 
 class Rectangle(Base):
     """A class representing a rectangle."""

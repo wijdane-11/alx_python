@@ -1,35 +1,32 @@
-#!/usr/bin/python3
-"""Module defining the Square class."""
+# models/square.py
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
-    """The Square class, inherits from Rectangle."""
+    """A class representing a square."""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialize the Square instance.
+        """
+        Initializes a Square object.
 
         Args:
-            size (int): Size of the square.
-            x (int): X-coordinate of the square.
-            y (int): Y-coordinate of the square.
-            id (int): If provided, assign it to the public instance attribute id.
-                      Otherwise, let the super class handle it.
+            size (int): The size of the square.
+            x (int, optional): X coordinate of the square. Defaults to 0.
+            y (int, optional): Y coordinate of the square. Defaults to 0.
+            id (int, optional): ID of the square. Defaults to None.
         """
         super().__init__(size, size, x, y, id)
 
+    def __str__(self):
+        """Overrides the __str__ method to provide a custom string representation."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+
     @property
     def size(self):
-        """Getter for size."""
+        """Getter for the size attribute."""
         return self.width
 
     @size.setter
     def size(self, value):
-        """Setter for size."""
+        """Setter for the size attribute."""
         self.width = value
         self.height = value
-
-    def __str__(self):
-        """Return a string representation of the square."""
-        return "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.width
-        )

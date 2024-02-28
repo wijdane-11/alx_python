@@ -1,76 +1,71 @@
 #!/usr/bin/env python3
+
 """
-This script fetches employee data and their TODO list from a REST API and exports it to a JSON file.
+This script fetches tasks associated with a specific user ID from a dummy API
+and exports them to a JSON file in a specific format.
 
-The JSON data format:
-{
-    "USER_ID": [
-        {
-            "task": "TASK_TITLE",
-            "completed": TASK_COMPLETED_STATUS,
-            "username": "USERNAME"
-        },
-        ...
-    ]
-}
+The script takes a user ID as a command-line argument and retrieves tasks
+belonging to that user from the JSONPlaceholder API. It then constructs a JSON
+representation of the tasks and exports them to a file named <user_id>.json.
 
-Usage: python3 script.py <employee_id>
+Example usage:
+python3 script.py <user_id>
 """
 
 import sys
-import requests
 import json
+import requests
 
-class EmployeeDataExporter:
+class TaskExporter:
     """
-    Class responsible for fetching employee data and exporting it to JSON.
+    TaskExporter class is responsible for fetching tasks from the API and exporting them to JSON.
     """
 
     def __init__(self):
         pass
 
-    def fetch_employee_data(self, employee_id):
+    def fetch_tasks(self, user_id):
         """
-        Fetches employee data and their TODO list from a REST API and exports it to a JSON file.
+        Fetches tasks associated with a specific user ID from the JSONPlaceholder API.
 
         Args:
-            employee_id (int): The ID of the employee whose data needs to be fetched.
+            user_id (int): The ID of the user whose tasks are to be fetched.
+
+        Returns:
+            list: A list of tasks associated with the specified user ID.
+        """
+        url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
+        response = requests.get(url)
+        tasks = response.json()
+        return tasks
+
+    def export_to_json(self, user_id, tasks):
+        """
+        Exports tasks to a JSON file in a specific format.
+
+        Args:
+            user_id (int): The ID of the user.
+            tasks (list): A list of tasks associated with the user.
 
         Returns:
             None
         """
-        try:
-            # Fetch employee data
-            employee_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
-            employee_data = employee_response.json()
-            user_id = employee_data['id']
-            username = employee_data['username']
-
-            # Fetch TODO list data
-            todos_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
-            todos_data = todos_response.json()
-
-            # Prepare JSON data
-            json_data = {str(user_id): [{"task": task['title'], "completed": task['completed'], "username": username} for task in todos_data]}
-
-            # Write data to JSON file
-            filename = f"{user_id}.json"
-            with open(filename, 'w') as json_file:
-                json.dump(json_data, json_file, indent=4)
-
-            print(f"Data exported to {filename}")
-        except Exception as e:
-            print("An error occurred:", e)
+        data = {str(user_id): []}
+        for task in tasks:
+            data[str(user_id)].append({
+                "task": task["title"],
+                "completed": task["completed"],
+                "username": task["username"]
+            })
+        with open(f"{user_id}.json", "w") as file:
+            json.dump(data, file, indent=4)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 script.py <employee_id>")
+        print("Usage: python3 script.py <user_id>")
         sys.exit(1)
 
-    employee_id = int(sys.argv[1])
-
-    # Instantiate EmployeeDataExporter class
-    data_exporter = EmployeeDataExporter()
-
-    # Fetch and export employee data to JSON
-    data_exporter.fetch_employee_data(employee_id)
+    user_id = int(sys.argv[1])
+    exporter = TaskExporter()
+    tasks = exporter.fetch_tasks(user_id)
+    exporter.export_to_json(user_id, tasks)

@@ -12,9 +12,9 @@ Example usage:
 python3 script.py <user_id>
 """
 
-import sys
 import json
 import requests
+import sys
 
 class TaskExporter:
     """
